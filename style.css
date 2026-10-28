@@ -210,6 +210,12 @@ nav ul li a[href*="sports"]:hover {
     box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45);
 }
 
+nav ul li a[href*="running"]:hover {
+    background: rgba(249, 115, 22, 0.3);
+    border-color: rgba(249, 115, 22, 0.7);
+    box-shadow: 0 6px 18px rgba(249, 115, 22, 0.45);
+}
+
 nav ul li a[href*="puzzle"]:hover {
     background: rgba(168, 85, 247, 0.3);
     border-color: rgba(168, 85, 247, 0.7);
@@ -1288,6 +1294,16 @@ div#gameLoad.fullscreen {
     background: linear-gradient(135deg, rgba(168, 85, 247, 0.45), rgba(139, 92, 246, 0.4));
     border-color: rgba(168, 85, 247, 0.8);
     box-shadow: 0 6px 18px rgba(168, 85, 247, 0.45);
+}
+
+.tag-card.cat-running {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.22), rgba(234, 88, 12, 0.18));
+    border-color: rgba(249, 115, 22, 0.4);
+}
+.tag-card.cat-running:hover {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.45), rgba(234, 88, 12, 0.4));
+    border-color: rgba(249, 115, 22, 0.8);
+    box-shadow: 0 6px 18px rgba(249, 115, 22, 0.45);
 }
 
 .tag-card.cat-shooting {
