@@ -558,12 +558,21 @@ nav ul li a[href*="vex"]:hover {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 12px;
+    text-align: left;
 }
 
 .game-desc-right .list-categories-home {
+    display: grid;
     grid-template-columns: repeat(1, 1fr);
     padding: 0;
     gap: 8px;
+}
+
+.game-desc-right .list-categories-home .tag-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex: 1 1 100%;
 }
 
 @media (max-width: 991px) {
@@ -1182,23 +1191,28 @@ div#gameLoad.fullscreen {
 
 .box-categories .box-games-title {
     width: 100%;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     font-size: 20px;
     color: var(--text-color);
     letter-spacing: 0.5px;
+    text-align: center;
 }
 
 .list-categories-home {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
     padding: 0 15px;
     width: 100%;
 }
 
 .list-categories-home .tag-card {
     height: 48px;
-    width: 100%;
+    flex: 0 1 180px;
+    min-width: 160px;
+    max-width: 215px;
     border-radius: 12px;
     position: relative;
     display: flex;
@@ -1213,10 +1227,28 @@ div#gameLoad.fullscreen {
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transform-origin: center;
 }
 
 .list-categories-home .tag-card:before {
     display: none;
+}
+
+.list-categories-home .tag-card:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.list-categories-home .tag-card:hover:after {
+    transform: scaleX(1);
 }
 
 .list-categories-home .tag-card img {
@@ -2201,9 +2233,13 @@ div#gameLoad.fullscreen {
     }
 
     .list-categories-home {
-        grid-template-columns: repeat(2, 1fr);
         gap: 6px;
         padding: 0 5px;
+    }
+
+    .list-categories-home .tag-card {
+        flex: 1 1 calc(50% - 6px);
+        min-width: 130px;
     }
 
     .game-desc-left,.game-desc-right {
