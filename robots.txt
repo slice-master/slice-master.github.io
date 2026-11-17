@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://slice-master.github.io/sitemap.xml
